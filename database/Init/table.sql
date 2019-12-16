@@ -59,6 +59,8 @@ create table asset(
  fund_code varchar(6),
  amt  numeric(19,2),
  amount numeric(19,6),
+ onway_amt numeric(19,2),
+ onway_amount numeric(19,6),
  settle_date int8
 );
 create table cash(
