@@ -1,54 +1,26 @@
+insert into fund_info(fund_code,fund_name,fund_full_name,fund_type)
+			SELECT 'F501036','汇添富中证500指数A','汇添富中证500指数A','0' FROM DUAL
+UNION ALL 	SELECT 'F001214','华泰柏瑞中证500联接A','华泰柏瑞中证500联接A','0' FROM DUAL
+UNION ALL 	SELECT 'SZ159910','深F120','深F120','1' FROM DUAL
+UNION ALL 	SELECT 'SH501029','红利基金','华宝标普红利基金','1' FROM DUAL
+UNION ALL 	SELECT 'SZ161017','富国500','富国中证500指数增强','1' FROM DUAL
+UNION ALL 	SELECT 'F070023','嘉实深圳基本面120联接','嘉实深圳基本面120联接','0' FROM DUAL
+UNION ALL 	SELECT 'F003318','景顺长城中证500低波动','景顺长城中证500低波动','0' FROM DUAL
+UNION ALL 	SELECT 'F501029','华宝红利基金','华宝红利基金','0' FROM DUAL
+UNION ALL 	SELECT 'SZ160119','南方500','南方500','1' FROM DUAL
+UNION ALL 	SELECT 'F501050','华夏上证50AH优选指数','华夏上证50AH优选指数','0' FROM DUAL
+UNION ALL 	SELECT 'F162411','华宝油气','华宝油气','0' FROM DUAL
+UNION ALL 	SELECT 'F002903','广发中证500ETF联接C','','0' FROM DUAL
+UNION ALL 	SELECT 'F001180','广发中证医药卫生','','0' FROM DUAL
+UNION ALL 	SELECT 'F000614','华安德国30(DAX)联接','','0' FROM DUAL
+UNION ALL 	SELECT 'F000968','广发中证养老','','0' FROM DUAL
+UNION ALL 	SELECT 'F100038','富国沪深300增强','','0' FROM DUAL
+UNION ALL 	SELECT 'F340001','兴全可转债','','0' FROM DUAL
+UNION ALL 	SELECT 'F000478','建信中证500指数增强A','','0' FROM DUAL
+UNION ALL 	SELECT 'F001052','华夏中证500联接','','0' FROM DUAL
+UNION ALL 	SELECT 'F001061','华夏海外收益债券A','','0' FROM DUAL
+UNION ALL 	SELECT 'F001064','广发中证环保联接A','','0' FROM DUAL
+UNION ALL 	SELECT 'F161017','富国中证500指数增强','','0' FROM DUAL
+UNION ALL 	SELECT 'F004752','广发中证传媒ETF联接A','','0' FROM DUAL
+UNION ALL 	SELECT 'F100032','富国中证红利指数增强','','0' FROM DUAL
 
-create table fund_info(
-fund_code varchar(6),
-fund_name varchar(60),
-fund_full_name varchar(256)
-);
-create table fund_net(
-fund_code varchar(6),
-net_value numeric(19,6),
-net_date integer(8)
-);
-
-create table apply_fee(
-fund_code varchar(6),
-fee_ratio numeric(6,4)
-);
-create table redeem_fee(
-fund_code varchar(6),
-begin_date int4,
-end_date int4,
-fee_ratio numeric(6,4)
-);
-
-create table trade_log(
-id numeric(18),
-fund_code varchar(6),
-op_type char(1),
-op_date integer(8),
-settle_date integer(8),
-occur_amt numeric(19,2),
-occur_amount numeric(19,6),
-net_value numeric(19,6)
-);
-
-create table untrade_log(
-id numeric(18),
-fund_code varchar(6),
-op_type char(1),
-op_date integer(8),
-settle_date integer(8),
-occur_amt numeric(19,2),
-occur_amount numeric(19,6)
-);
-
-create table asset(
-fund_code varchar(6),
-amt  numeric(19,2),
-amount numeric(19,6),
-settle_date int8
-);
-create table cash(
-amt  numeric(19,2),
-settle_date int8
-)
