@@ -23,4 +23,12 @@ UNION ALL 	SELECT 'F001064','广发中证环保联接A','','0' FROM DUAL
 UNION ALL 	SELECT 'F161017','富国中证500指数增强','','0' FROM DUAL
 UNION ALL 	SELECT 'F004752','广发中证传媒ETF联接A','','0' FROM DUAL
 UNION ALL 	SELECT 'F100032','富国中证红利指数增强','','0' FROM DUAL
+;
+insert into sales_info(sales_id,sales_name, floor_fee_ratio)
+			SELECT 1,'涨乐财付通','0.0002' FROM DUAL
+UNION ALL 	SELECT 2,'京东金融', '' FROM DUAL
+UNION ALL 	SELECT 3,'理财通', '' FROM DUAL
+;
+
+COMMIT;
 

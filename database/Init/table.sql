@@ -68,5 +68,6 @@ create table cash(
 
 create table sales_info(
  sales_id numeric(18),
- sales_name varchar(64)
+ sales_name varchar(64),
+ floor_fee_ratio numeric(6,4)
 )
